@@ -12,8 +12,6 @@
 // Singola Card
 import SingleCardComponent from '@/components/SingleCardComponent.vue'
 
-
-
 export default {
     name: 'MainComponent',
     components: {
@@ -44,6 +42,18 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.bg_card {
+    background-color: #2E3A46;
+    // Titolo 
+    h3 {
+        color: #FFFFFB;
+    }
+    // Sottotitoli
+    span {
+        color: #7C7B77
+    }
 }
 
 </style>
