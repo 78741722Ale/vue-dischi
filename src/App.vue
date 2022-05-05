@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    
-    <h2>Ciao</h2>
-
+    <!-- Component dell'Header -->
+    <HeaderComponent />
+    <!-- Component dell'Main -->
+    <MainComponent />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
-
+import HeaderComponent from './components/HeaderComponent.vue'
+import MainComponent from './components/MainComponent.vue'
 
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    HeaderComponent,
+    MainComponent
   }
 }
 </script>
@@ -27,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
