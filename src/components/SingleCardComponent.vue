@@ -1,0 +1,75 @@
+<template>
+    <!-- Questa è una singola card -->
+    <div class="col-2 p-0 h_card bg_card flex_col">
+        <!-- Immagine -->
+        <div class="col-12 h_xl w-100">
+            <img src="https://picsum.photos/300/300" alt="Andrà Titolo Dinamico">
+        </div>
+        <!-- Titolo -->
+        <div class="col-12 h_sm w-100">
+            <h3>Qui Titolo dinamico</h3>
+        </div>
+        <!-- Descrizione Brano -->
+        <div class="col-12 h_sm w-100 flex_col">
+            <!-- Nome Band -->
+            <div class="col-12 h-50 w-100 bg-danger">
+                <span>Band</span>
+            </div>
+            <!-- Anno Uscita -->
+            <div class="col-12 h-50 w-100 bg-danger">
+                <span>Anno Uscita</span>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name:'SingleCardComponent'
+}
+</script>
+
+<style lang="scss" scoped>
+.bg_card {
+    background-color: #2E3A46;
+    // Titolo 
+    h3 {
+        color: #FFFFFB;
+    }
+    // Sottotitoli
+    span {
+        color: #7C7B77
+    }
+}
+
+.col-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 90%;
+        height: 90%;
+        background-position: center center;
+        padding: 0;
+    }
+}
+
+.flex_col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// Altezze della card
+.h_card { 
+    height: 425px;
+}
+.h_xl {
+    height: 60%;
+}
+.h_sm {
+    height: 20%;
+}
+
+</style>
