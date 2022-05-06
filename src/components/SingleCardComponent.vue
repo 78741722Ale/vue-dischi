@@ -1,6 +1,6 @@
 <template>
     <!-- Questa è una singola card -->
-    <div class="col-2 p-0 h_card bg_card flex_col">
+    <div class="col- p-0 h_card bg_card flex_col">
         <!-- Immagine -->
         <div class="col-12 h_xl w-100">
             <img src="https://picsum.photos/300/300" alt="Andrà Titolo Dinamico">
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-    name:'SingleCardComponent'
+    name: 'SingleCardComponent',
 }
 </script>
 

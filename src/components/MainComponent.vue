@@ -1,8 +1,17 @@
 <template>
     <!-- Genitore -->
     <div class="container-fluid flex_cent h_main bg_main">
-        <div class="row w-100 flex_cent gap-4 h-100">
+        <div class="row row-cols-6 w-100 flex_cent gap-4 h-100">
             <!-- Verificato in caso di V-for va bene -->
+            <SingleCardComponent />
+            <SingleCardComponent />
+            <SingleCardComponent />
+            <SingleCardComponent />
+            <SingleCardComponent />
+            <SingleCardComponent />
+            <SingleCardComponent />
+            <SingleCardComponent />
+            <SingleCardComponent />
             <SingleCardComponent />
         </div>
     </div>
@@ -20,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 // Altezza in VH del Main
 .h_main {
     height: calc(100% - 7vh);
