@@ -5,35 +5,23 @@
             <div class="col-3 d-flex justify-content-start align-items-center">
                 <img src="@/assets/logo.png" alt="Logo Spotify">
             </div>
-            <!-- Input type search -->
-            <div class="col-3 d-flex justify-content-center align-items-center">
-                <li class="nav-item dropdown flex_cent">
-                    <!-- Toggle del dropdown -->
-                    <a class="nav-link dropdown-toggle" 
-                    href="#" 
-                    id="navbarDropdown" 
-                    role="button" 
-                    data-bs-toggle="dropdown" 
-                    aria-expanded="false">
-                        Genere
-                    </a>
-                    <!-- Menu dropdown -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Rock</a></li>
-                        <li><a class="dropdown-item" href="#">Pop</a></li>
-                        <li><a class="dropdown-item" href="#">Jazz</a></li>
-                        <li><a class="dropdown-item" href="#">Metal</a></li>
-                    </ul>
-                </li>
-            </div>
+            <!-- Menù a tendina per il select -->
+            <SelectBox />
         </div>
     </div>
 </template>
 
 <script>
+import SelectBox from "@/components/SelectBox.vue"
+
 export default {
-    name: 'HeaderComponent'
+    name: 'HeaderComponent',
+    components: {
+        SelectBox
+    }
+
 }
+
 </script>
 
 <style lang="scss" scoped>
