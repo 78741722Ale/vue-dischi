@@ -2,7 +2,7 @@
     <!-- Genitore -->
     <section class="h_main bg_main flex_cent ">
         <div class="container h-100">
-            <div class="row row-cols-6 w-100 flex_cent gap-4 h-100">
+            <div class="row row-cols-6 w-100 flex_cent gy-2 gap-4 h-100">
                 <!-- Verificato in caso di V-for va bene -->
                 <!-- Single è l'oggetto dichiarato in props e nel componente SingleCardComponent -->
                 <SingleCardComponent 

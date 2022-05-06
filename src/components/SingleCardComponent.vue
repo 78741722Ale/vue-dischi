@@ -42,7 +42,7 @@ export default {
 .bg_card {
     background-color: #2E3A46;
     // Titolo 
-    h3 {
+    h4 h3 {
         color: #FFFFFB;
     }
     // Sottotitoli
