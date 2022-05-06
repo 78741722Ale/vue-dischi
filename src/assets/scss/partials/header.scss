@@ -7,11 +7,25 @@
 .bg_header {
     background-color: #2E3A46;
 }
-
+// Logo image
 .col-3 {
     img {
         width: 60px;
         height: 60px;
         aspect-ratio: 1 / 1;
     }
+}
+
+// Dropdown menu
+.dropdown {
+    a {
+        color:#FFFFFB;
+        font-size: 1.25rem;
+    }
+}
+
+// Colore del dropdown
+.dropdown-menu {
+    background-color: #2E3A46;
+    
 }
