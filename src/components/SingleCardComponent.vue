@@ -1,23 +1,24 @@
 <template>
     <!-- Questa è una singola card -->
     <div class="col- p-0 h_card bg_card flex_col">
-        <!-- Immagine -->
+        <!-- Immagine del CD -->
         <div class="col-12 h_xl w-100">
-            <img src="https://picsum.photos/300/300" alt="Andrà Titolo Dinamico">
+            <!-- Immagine con foto dinamica e titolo dinamico, preso tramite props -->
+            <img :src="single.poster" :alt="single.title">
         </div>
-        <!-- Titolo -->
+        <!-- Titolo del CD -->
         <div class="col-12 h_sm w-100">
-            <h3>Qui Titolo dinamico</h3>
+            <h3>{{ single.title }}</h3>
         </div>
-        <!-- Descrizione Brano -->
+        <!-- Descrizione Brano CD -->
         <div class="col-12 h_sm w-100 flex_col">
             <!-- Nome Band -->
-            <div class="col-12 h-50 w-100 bg-danger">
-                <span>Band</span>
+            <div class="col-12 h-50 w-100">
+                <span>{{ single.author }}</span>
             </div>
             <!-- Anno Uscita -->
-            <div class="col-12 h-50 w-100 bg-danger">
-                <span>Anno Uscita</span>
+            <div class="col-12 h-50 w-100">
+                <span>{{ single.year }}</span>
             </div>
         </div>
     </div>
@@ -26,6 +27,14 @@
 <script>
 export default {
     name: 'SingleCardComponent',
+    props: {
+        // Il singolo è di tipo oggetto, contiene una serie di info tra cui titolo ecc
+        // Verificato la chiamata API tramite postman
+        single: {
+            type: Object,
+            require: true
+        }
+    }
 }
 </script>
 
