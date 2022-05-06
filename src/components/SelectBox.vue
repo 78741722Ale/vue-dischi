@@ -1,26 +1,14 @@
 <template>
   <!-- Menù a tendina per il select -->
   <div class="col-3 d-flex justify-content-center align-items-center">
-    <li class="nav-item dropdown flex_cent">
-      <!-- Toggle del dropdown -->
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        id="navbarDropdown"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Genere
-      </a>
-      <!-- Menu dropdown -->
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#">Rock</a></li>
-        <li><a class="dropdown-item" href="#">Pop</a></li>
-        <li><a class="dropdown-item" href="#">Jazz</a></li>
-        <li><a class="dropdown-item" href="#">Metal</a></li>
-      </ul>
-    </li>
+    <select class="form-select w-25" aria-label="Default select example">
+        <option selected>Genere</option>
+        <option value="1">Pop</option>
+        <option value="2">Jazz</option>
+        <option value="3">Metal</option>
+        <option value="3">Rock</option>
+        <option value="3">HipHop</option>
+    </select>
   </div>
 </template>
 
