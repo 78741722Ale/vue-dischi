@@ -1,20 +1,28 @@
 <template>
   <!-- Menù a tendina per il select -->
   <div class="col-3 d-flex justify-content-center align-items-center">
-    <select class="form-select w-25" aria-label="Default select example">
-        <option selected>Genere</option>
-        <option value="1">Pop</option>
-        <option value="2">Jazz</option>
-        <option value="3">Metal</option>
-        <option value="3">Rock</option>
-        <option value="3">HipHop</option>
+    <!-- Questo emit deriva da Header -->
+    <select 
+    @change="$emit('changeSelect')" 
+    @input="$emit('input', $event.target.value)" name="genere" id="genere"
+    class="form-select w-50" 
+    aria-label="Default select example">
+        <option selected disabled>Genere</option>
+        <option value="Pop">Pop</option>
+        <option value="Metal">Metal</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Rock">Rock</option>
     </select>
   </div>
 </template>
 
 <script>
 export default {
-    name: "SelectBox"
+    name: "SelectBox",
+    // Props necessaria per la SelectBox
+    props: {
+        selectAlbum: String,
+    }
 }
 </script>
 

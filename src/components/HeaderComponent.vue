@@ -6,20 +6,34 @@
                 <img src="@/assets/logo.png" alt="Logo Spotify">
             </div>
             <!-- Menù a tendina per il select -->
-            <SelectBox />
+            <SelectBox v-model="selectAlbum" @changeSelect="selected_album" />
         </div>
     </div>
 </template>
 
 <script>
 import SelectBox from "@/components/SelectBox.vue"
+/* Import dello state della selectbox */
+import state from "@/state.js";
+
 
 export default {
     name: 'HeaderComponent',
     components: {
-        SelectBox
+        SelectBox,
+    },
+    data() {
+        // Ascolto il valore di ritorno (in questo caso vuoto) di SelectAlbum 
+        return {
+            selectAlbum: '',
+        }
+    },
+    methods: {
+        selected_album() {
+        state.selectAlbum = this.selectAlbum;
+        console.log(`Questo è il console log di ${state.selectAlbum}`);
+        },
     }
-
 }
 
 </script>

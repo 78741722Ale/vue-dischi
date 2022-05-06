@@ -1,17 +1,21 @@
 <template>
     <!-- Genitore -->
-    <section class="h_main bg_main flex_cent ">
+    <section v-if='!loading' class="h_main bg_main flex_cent ">
         <div class="container h-100">
             <div class="row row-cols-6 w-100 flex_cent gy-2 gap-4 h-100">
                 <!-- Verificato in caso di V-for va bene -->
                 <!-- Single è l'oggetto dichiarato in props e nel componente SingleCardComponent -->
                 <SingleCardComponent 
                 :single="single" 
-                v-for="(single, index) in albums"
+                v-for="(single, index) in selectSingle"
                 :key="index"
                 />
             </div>
         </div>
+    </section>
+    <!-- altrimenti metto il caricamento della pagina -->
+    <section v-else>
+        <h4>Stiamo Verificando i brani, attendere prego</h4>
     </section>
 </template>
 
@@ -20,6 +24,8 @@
 import SingleCardComponent from '@/components/SingleCardComponent.vue'
 // Importo chiamate axios
 import axios from 'axios'
+// Ora importo lo states
+import state from "@/state.js";
 
 
 export default {
@@ -28,6 +34,8 @@ export default {
     // Oggetto data
     data() {
         return {
+            // link array di oggetti postman
+            link: "https://flynn.boolean.careers/exercises/api/array/music",
             // Array di oggetti API
             albums:null,
             // Condizione v-else
@@ -36,7 +44,7 @@ export default {
     },
     // Mounted per chiamata API
     mounted() {
-    axios.get("https://flynn.boolean.careers/exercises/api/array/music").then(response => {
+    axios.get(this.link).then(response => {
         console.log(response);
         this.albums = response.data.response; // richiamo dell'array
         this.loading = false; // richiamo della condizione di caricamento
@@ -46,6 +54,24 @@ export default {
         this.error = `Warning ${error.message}`;
     });
     },
+    // Aggiungo il computed
+    computed : {
+        selectSingle() {
+            // Se nello state c'è il selecte album allora
+            if(state.selectAlbum) {
+                // Verifico in console
+                console.log(`Questo è il console log di ${this.albums}`);
+                return this.albums.filter(single => {
+                    // Questo è il filter necessario 
+                    return single.genre.toLowerCase().includes(state.selectAlbum.toLowerCase())
+                })
+            } 
+            else {
+                // Altrimenti ritorna tutti i titoli dell'album
+                return this.albums
+            }
+        }
+    }
 }
 
 </script>
