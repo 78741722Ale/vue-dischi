@@ -2,9 +2,10 @@
   <!-- Menù a tendina per il select -->
   <div class="col-3 d-flex justify-content-center align-items-center">
     <!-- Questo emit deriva da Header -->
+    <!-- Al change richiamo, tramite emit @AlbumSelect="selected_album" presente nell'header -->
     <select 
-    @change="$emit('changeSelect')" 
-    @input="$emit('input', $event.target.value)" name="genere" id="genere"
+    @change="$emit('AlbumSelect')" 
+    @input="$emit('input', $event.target.value)"
     class="form-select w-50" 
     aria-label="Default select example">
         <option selected disabled>Genere</option>

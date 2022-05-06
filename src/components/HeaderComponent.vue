@@ -6,7 +6,9 @@
                 <img src="@/assets/logo.png" alt="Logo Spotify">
             </div>
             <!-- Menù a tendina per il select -->
-            <SelectBox v-model="selectAlbum" @changeSelect="selected_album" />
+            <!-- selectAlbum => state.selectAlbum = this.selectAlbum -->
+            <!-- Importando lo state io riesco a dire che selectAlbum è this. -->
+            <SelectBox v-model="selectAlbum" @AlbumSelect="selected_album" />
         </div>
     </div>
 </template>
