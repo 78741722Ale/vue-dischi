@@ -3,7 +3,8 @@
 import Vue from 'vue'
 // crea un oggetto usando .observable
 const state = Vue.observable({
-    selectAlbum: ''
+    selectAlbum: '',
+    selectAuthor: '',
 })
 // esporta lo state
 export default state

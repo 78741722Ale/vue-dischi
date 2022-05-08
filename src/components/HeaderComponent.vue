@@ -5,13 +5,14 @@
             <div class="col-3 d-flex justify-content-start align-items-center">
                 <img src="@/assets/logo.png" alt="Logo Spotify">
             </div>
-            <div class="col-5 bg-danger d-flex justify-content-evenly align-items-center">
+            <div class="col-5 d-flex justify-content-evenly align-items-center">
                 <!-- Menù a tendina per il select -->
                 <!-- selectAlbum => state.selectAlbum = this.selectAlbum -->
                 <!-- Importando lo state io riesco a dire che selectAlbum è this. -->
                 <SelectBox v-model="selectAlbum" @AlbumSelect="selected_album" />
                 <!-- Menù a tendina per il select Author -->
-                <SelectAuthor v-model="selectAuthor" @AlbumSelect="selected_album" />
+                <!-- selectAuthor => state.selectAuthor = this.selectAuthor -->
+                <SelectAuthor v-model="selectAuthor" @AuthorSelect="selected_album" />
             </div>
         </div>
     </div>
@@ -41,8 +42,12 @@ export default {
     },
     methods: {
         selected_album() {
+        // Questo per la selezione dell'album    
         state.selectAlbum = this.selectAlbum;
+        // Questo per la selezione dell'author
+        state.selectAuthor = this.selectAuthor;
         console.log(`Questo è il console log di ${state.selectAlbum}`);
+        console.log(`Questo è il console log di ${state.selectAuthor}`);
         },
     }
 }

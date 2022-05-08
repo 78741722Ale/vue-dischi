@@ -66,7 +66,14 @@ export default {
                     // Questo è il filter necessario 
                     return single.genre.toLowerCase().includes(state.selectAlbum.toLowerCase())
                 })
-            } 
+            } if(state.selectAuthor) {
+            // Verifico in console
+            console.log(`Questo è il console log di ${this.albums}`);    
+                return this.albums.filter(single => {
+                    // Questo è il filter necessario 
+                    return single.author.toLowerCase().includes(state.selectAuthor.toLowerCase())
+                })
+            }
             else {
                 // Altrimenti ritorna tutti i titoli dell'album
                 return this.albums

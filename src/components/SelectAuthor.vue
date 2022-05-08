@@ -1,7 +1,11 @@
 <template >
     <div class="col-5 gap-5 d-flex justify-content-center align-items-center"> 
         <!-- Select del Bonus x artista -->
-        <select class="form-select w-75" aria-label="Default select example">>
+        <select 
+        @change="$emit('AuthorSelect')" 
+        @input="$emit('input', $event.target.value)"
+        class="form-select w-75" 
+        aria-label="Default select example">>
             <option selected disabled>Artista</option>
             <option value="Bon Jovi">Bon Jovi</option>
             <option value="Queen">Queen</option>
