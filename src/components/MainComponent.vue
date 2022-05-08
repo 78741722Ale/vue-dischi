@@ -55,10 +55,10 @@ export default {
         this.error = `Warning ${error.message}`;
     });
     },
-    // Aggiungo il computed
+    // Aggiungo il computed per il filtro
     computed : {
         selectSingle() {
-            // Se nello state c'è il selecte album allora
+            // Se nello state c'è il selected album allora
             if(state.selectAlbum) {
                 // Verifico in console
                 console.log(`Questo è il console log di ${this.albums}`);
@@ -66,11 +66,13 @@ export default {
                     // Questo è il filter necessario 
                     return single.genre.toLowerCase().includes(state.selectAlbum.toLowerCase())
                 })
-            } if(state.selectAuthor) {
+            } 
+            // Se nello state è presente il select di Author
+            if(state.selectAuthor) {
             // Verifico in console
             console.log(`Questo è il console log di ${this.albums}`);    
                 return this.albums.filter(single => {
-                    // Questo è il filter necessario 
+                    // Questo è il filter necessario PER IL BONUS, per l'author
                     return single.author.toLowerCase().includes(state.selectAuthor.toLowerCase())
                 })
             }
