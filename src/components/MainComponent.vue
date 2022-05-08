@@ -46,11 +46,12 @@ export default {
     // Mounted per chiamata API
     mounted() {
     axios.get(this.link).then(response => {
-        console.log(response);
+        console.log(response); //verifico in console
         this.albums = response.data.response; // richiamo dell'array
         this.loading = false; // richiamo della condizione di caricamento
     })
     .catch(error => {
+        //
         console.log(error);
         this.error = `Warning ${error.message}`;
     });
