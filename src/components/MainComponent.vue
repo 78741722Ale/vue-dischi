@@ -13,6 +13,7 @@
             </div>
         </div>
     </section>
+    
     <!-- altrimenti metto il caricamento della pagina -->
     <section v-else>
         <h4>Stiamo Verificando i brani, attendere prego</h4>
