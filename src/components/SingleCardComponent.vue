@@ -72,7 +72,7 @@ export default {
 
 // Altezze della card
 .h_card { 
-    height: 425px;
+    height: 375px;
 }
 .h_xl {
     height: 60%;
